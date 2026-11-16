@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cfq"
+version = "1.0.0"
+description = "Convex Footprint Quadrilateral (CFQ): encoder/decoder, convexity check, order-invariant corner loss and evaluation metrics"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21"]
+
+[project.optional-dependencies]
+torch = ["torch>=1.10"]
+test = ["pytest>=7", "torch>=1.10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
